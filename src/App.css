@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  font-family: 'Comfortaa', 'Noto Sans KR', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --main-border-color: #dcd2f2;
+  --point-color: #7a5fc0;
+  --point-color-tint: #e8e1f8;
+  --default-text-color: #2e1e57;
+  --sub-text-color: #5f4c8c;
+  --bold-text-color: #1f1339;
+  --button-text-color: #ffffff;
+  --button-color: #886edc;
+  --shade-color: #f4f0fa;
+  --mypage-component-color: #b79df2;
+  --about-component-color: #cdbcf2;
+  --tweets-component-color: #f6f2fc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  display: flex;
+  justify-content: center;
   min-height: 100vh;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+  border: 0;
+}
+
+button,
+input {
+  overflow: visible; /* 1 */
+}
+
+button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+textarea {
+  overflow: auto;
+  resize: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+footer {
+  flex: 0 0 1rem;
+  padding: 0.3rem;
+  text-align: right;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  max-width: 640px;
+  flex: 1 0 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+  padding: 1rem;
+  background-color: var(--shade-color);
+  width: 72px;
+  align-items: center;
+}
+.tweetForm__input--username,
+.tweetForm__input--message {
+  border: none;
+  border-radius: 12pt;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0.75rem;
+  transition: box-shadow 0.2s ease-in-out;
+
+}
+.far,
+.fas {
+  font-size: 2.2rem;
+  color: var(--default-text-color);
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.far:hover,
+.fas:hover {
+  background-color: var(--point-color-tint);
+}
+
+.features {
+  width: 564px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--main-border-color);
+  flex: 1 0 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.tweetForm__submitButton {
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.aboutTwittler__wrapper {
+  height: 97px;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  color: var(--default-text-color);
+  background-color: var(--about-component-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.aboutTwittler__content {
+  flex: 1 0 80vh;
+  border: 2px solid var(--about-component-color);
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-radius: 12px;
+  background-color: var(--shade-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
 }
